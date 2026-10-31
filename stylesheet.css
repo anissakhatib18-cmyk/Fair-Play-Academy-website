@@ -1,0 +1,692 @@
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F3EBDD;
+    color: #042D5B;
+}
+
+
+/* =========================
+   2. HEADER & NAVBAR
+========================= */
+
+.site-header {
+    background-color: #FFFFFF;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar {
+    width: min(100% - 40px, 1200px);
+    margin: 0 auto;
+    min-height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: #042D5B;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #B08D57;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #042D5B;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #B08D57;
+}
+
+.nav-links a:focus-visible {
+    outline: 3px solid #B08D57;
+    outline-offset: 5px;
+}
+
+.nav-btn,
+.nav-btn:link,
+.nav-btn:visited {
+    display: inline-block;
+    background-color: #B08D57;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 14px 28px;
+    border: 2px solid #B08D57;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #042D5B;
+    border-color: #042D5B;
+    color: #FFFFFF;
+}
+
+.nav-btn:active {
+    background-color: #021830;
+    border-color: #021830;
+}
+
+.nav-btn:focus-visible {
+    outline: 3px solid #042D5B;
+    outline-offset: 4px;
+}
+
+
+/* =========================
+   3. HERO SECTION
+========================= */
+
+.hero {
+    min-height: calc(100vh - 85px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    padding: 60px max(20px, calc((100% - 1200px) / 2));
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(4, 45, 91, 0.88) 0%,
+            rgba(4, 45, 91, 0.5) 45%,
+            rgba(0, 0, 0, 0.1) 100%
+        ),
+        url('images/player.jpeg');
+
+    background-size: cover;
+    background-position: 85% 0%;
+    background-repeat: no-repeat;
+}
+
+.hero-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1.2;
+    max-width: 620px;
+}
+
+.tagline {
+    margin: 0 0 16px;
+    color: #E2B978;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    line-height: 1.5;
+}
+
+.hero-text h1 {
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(52px, 6vw, 82px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.hero-description {
+    color: #F3EBDD;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.7;
+    margin: 24px 0 38px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+a.hero-btn,
+a.hero-btn:link,
+a.hero-btn:visited {
+    display: inline-block;
+    background-color: #B08D57;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 18px 38px;
+    border: 2px solid #B08D57;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+a.hero-btn:hover,
+a.hero-btn:active {
+    background-color: #042D5B;
+    border-color: #042D5B;
+    color: #FFFFFF;
+    transform: translateY(-3px);
+}
+
+a.hero-btn:focus-visible {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 5px;
+}
+
+
+/* =========================
+   4. HERO LOGO
+========================= */
+
+.hero-logo {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+}
+
+.hero-logo img {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    object-fit: contain;
+
+    /* Turns a dark logo white */
+    filter:
+        brightness(0)
+        invert(1)
+        drop-shadow(0 4px 18px rgba(0, 0, 0, 0.7));
+}
+
+
+/* =========================
+   5. PLACEHOLDER SECTIONS
+========================= */
+
+.placeholder-section {
+    min-height: 300px;
+    padding: 80px 20px;
+    text-align: center;
+    border-top: 1px solid #D8CDBB;
+}
+
+.placeholder-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    color: #042D5B;
+}
+
+
+/* =========================
+   6. GALLERY SECTION
+========================= */
+
+.gallery-section {
+    width: 100%;
+    padding: 90px max(20px, calc((100% - 1200px) / 2));
+    background: linear-gradient(
+        135deg,
+        #021830 0%,
+        #042D5B 50%,
+        #083C75 100%
+    );
+    text-align: center;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-tag {
+    color: #E2B978;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    margin-bottom: 8px;
+}
+
+.section-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin: 0 0 15px;
+}
+
+.section-desc {
+    font-size: 18px;
+    color: #F3EBDD;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   7. GALLERY CATEGORIES
+========================= */
+
+.gallery-category {
+    margin-bottom: 50px;
+}
+
+.category-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #B08D57;
+    display: inline-block;
+}
+
+
+/* =========================
+   8. GALLERY GRID & CARDS
+========================= */
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+}
+
+.gallery-item {
+    flex: 0 1 280px;
+    aspect-ratio: 4 / 3;
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    background-color: #042D5B;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   9. GALLERY OVERLAY
+========================= */
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(4, 45, 91, 0.85) 0%,
+        transparent 60%
+    );
+    display: flex;
+    align-items: flex-end;
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-overlay span {
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    transform: translateY(10px);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-item:hover .gallery-overlay span {
+    transform: translateY(0);
+}
+.gallery-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    padding: 90px max(20px, calc((100% - 1200px) / 2));
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        135deg,
+        #021830 0%,
+        #042D5B 50%,
+        #083C75 100%
+    );
+
+    text-align: center;
+}
+
+/* =========================
+   10. RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 880px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 18px 0;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .hero {
+        padding: 60px 20px;
+        background-position: 75% center;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        flex: 1;
+        max-width: 100%;
+    }
+
+    .hero-logo {
+        width: 100%;
+    }
+
+    .hero-logo img {
+        max-width: 300px;
+    }
+
+    .gallery-section {
+        padding: 70px 20px;
+    }
+
+    .section-header h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 15px;
+    }
+
+    .nav-btn {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(40px, 11vw, 52px);
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    a.hero-btn {
+        padding: 14px 25px;
+        font-size: 15px;
+    }
+
+    .gallery-section {
+        padding: 55px 15px;
+    }
+
+    .section-header h2 {
+        font-size: 28px;
+    }
+
+    .category-title {
+        font-size: 21px;
+    }
+
+    .gallery-item {
+        flex-basis: 100%;
+    }
+}
+
+/* COMBINED CONTACT & FOOTER SECTION */
+.site-footer {
+    background-color: #021830;
+    color: #FFFFFF;
+    padding-top: 70px;
+    padding-bottom: 25px;
+    border-top: 4px solid #B08D57;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-sizing: border-box;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-col {
+    flex: 1 1 280px;
+}
+
+/* Column 1: Brand */
+.footer-brand h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin: 0 0 15px;
+}
+
+.footer-brand h3 span {
+    color: #B08D57;
+}
+
+.footer-brand p {
+    color: #D8CDBB;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Headers for Columns 2 & 3 */
+.footer-col h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #B08D57;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Column 2: Contact List */
+.footer-contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #FFFFFF;
+}
+
+.footer-contact li i {
+    color: #B08D57;
+    font-size: 18px;
+    width: 20px;
+    text-align: center;
+}
+
+.footer-contact li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact li a:hover {
+    color: #B08D57;
+}
+
+/* Column 3: Social Buttons */
+.footer-social p {
+    color: #D8CDBB;
+    font-size: 14px;
+    margin: 0 0 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.social-btn {
+    width: 45px;
+    height: 45px;
+    background-color: #042d5b;
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    text-decoration: none;
+    border: 1px solid #B08D57;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(176, 141, 87, 0.35);
+}
+
+.social-btn.instagram:hover {
+    background: #E1306C;
+    border-color: #E1306C;
+}
+
+.social-btn.facebook:hover {
+    background: #1877F2;
+    border-color: #1877F2;
+}
+
+.social-btn.whatsapp:hover {
+    background: #25D366;
+    border-color: #25D366;
+}
+
+/* Copyright Bar */
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(216, 205, 187, 0.15);
+}
+
+.footer-bottom p {
+    color: #8899a6;
+    font-size: 13px;
+    margin: 0;
+}
